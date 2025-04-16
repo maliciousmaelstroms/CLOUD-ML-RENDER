@@ -20,7 +20,7 @@ def predict():
         wind_speed = data['wind_speed']
 
         # Prepare the input for the model, using the correct feature names
-        features = pd.DataFrame([[humidity, wind_speed, wind_speed]], columns=['humidity', 'wind_mph', 'wind_kph'])
+        features = pd.DataFrame([[humidity, wind_speed, wind_speed]], columns=['humidity', 'wind_mph'])
 
 
         # Make prediction
