@@ -26,7 +26,6 @@
             let humidity = document.getElementById("humidity").value;
             let wind_speed = document.getElementById("wind_speed").value;
 
-            // Sending the data to Flask for prediction
             fetch("/predict", {
                 method: "POST",
                 headers: {
@@ -46,4 +45,5 @@
     </script>
 </body>
 </html>
+
 
