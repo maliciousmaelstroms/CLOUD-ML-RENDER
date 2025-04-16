@@ -17,7 +17,7 @@ def predict():
         # Get data from the POST request
         data = request.get_json()
         humidity = data['humidity']
-        wind_speed = data['wind_speed']
+        wind_speed = data['wind_mph']
 
         # Prepare the input for the model, using the correct feature names
         features = pd.DataFrame([[humidity, wind_speed, wind_speed]], columns=['humidity', 'wind_mph'])
