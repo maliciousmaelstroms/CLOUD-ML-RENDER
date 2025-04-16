@@ -9,7 +9,7 @@ model = joblib.load("weather_model.pkl")
 
 @app.route('/')
 def home():
-    return render_template("index.html")  # This will render the index.html page
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -20,7 +20,7 @@ def predict():
         wind_speed = data['wind_speed']
 
         # Prepare the input for the model
-        features = pd.DataFrame([[humidity, wind_speed]], columns=['humidity', 'wind_mph'])
+        features = pd.DataFrame([[humidity, wind_speed]], columns=['humidity', 'wind_speed'])
 
         # Make prediction
         prediction = model.predict(features)
@@ -32,7 +32,6 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)})
 
-
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(debug=True)
 
